@@ -1,4 +1,7 @@
 class AuthorsController < ApplicationController
+  def show
+    @author = Author.find(params[:id])
+  end
   def new
   end
   def create
@@ -6,8 +9,5 @@ class AuthorsController < ApplicationController
 
     @author.save
     redirect_to @author
-  end
-  def show
-    @author = Author.find(params[:id])
   end
 end
