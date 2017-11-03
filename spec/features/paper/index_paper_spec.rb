@@ -31,4 +31,14 @@ describe 'Index paper page', type: :feature do
 
     expect(page).to have_link('Edit')
   end
+
+  it 'should be able to destroy papers' do
+    FactoryGirl.create :paper
+    visit papers_path
+
+    expect(page).to have_link('Destroy')
+    expect(Paper.find_by_title('COMPUTING MACHINERY AND INTELLIGENCE')).not_to be_nil
+    click_link('Destroy')
+    expect(Paper.find_by_title('COMPUTING MACHINERY AND INTELLIGENCE')).to be_nil
+  end
 end
