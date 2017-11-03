@@ -29,7 +29,7 @@ class PapersController < ApplicationController
     @paper = Paper.find(params[:id])
     @paper.authors = []
     for i in 1..5
-      id = params.require(:paper)[('author' + i.to_s).to_sym]
+      id = params.require(:paper)[('author_' + i.to_s).to_sym]
       @paper.authors << Author.find(id) if id && !id.to_s.empty?
     end
 
