@@ -29,4 +29,9 @@ describe 'paper Object', type: :model do
     expect(paper).not_to be_valid
   end
 
+  it 'should have an author list' do
+    paper = Paper.new(id: 42, title: 'COMPUTING MACHINERY AND INTELLIGENCE', venue: 'Mind 49: 433-460', year:'nineteen-fifty')
+    expect(paper.authors).to eq([])
+  end
+
 end
