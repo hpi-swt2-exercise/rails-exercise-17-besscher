@@ -8,3 +8,10 @@
   <strong>Year:</strong>
   <%= @paper.year %>
 </p>
+<br>
+Authors:
+<ul>
+  <% @paper.authors.each do |author| %>
+      <li><%= link_to author.name, author %></li>
+  <% end %>
+</ul>
