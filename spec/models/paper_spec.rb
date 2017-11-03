@@ -9,4 +9,9 @@ describe 'paper Object', type: :model do
     expect(paper.year).to eq(1950)
   end
 
+  it 'should not be valid without a title' do
+    paper = Paper.new(id: 42, venue: 'Mind 49: 433-460', year: 1950)
+    expect(paper).not_to be_valid
+  end
+
 end
