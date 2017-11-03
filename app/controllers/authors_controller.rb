@@ -11,6 +11,10 @@ class AuthorsController < ApplicationController
     @author = Author.new
   end
 
+  def edit
+    @article = Author.find(params[:id])
+  end
+
   def create
     @author = Author.new(params.require(:author).permit(:first_name, :last_name, :homepage))
 
