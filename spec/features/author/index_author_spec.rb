@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-describe "Index author page", type: :feature do
-
-  it "should render withour error" do
+describe 'Index author page', type: :feature do
+  it 'should render without error' do
     visit authors_path
   end
 
-  it "should display alan" do
+  it 'should display alan' do
     FactoryGirl.create :author
     visit authors_path
 
@@ -14,17 +13,16 @@ describe "Index author page", type: :feature do
     expect(page.text).to match(/http:\/\/wikipedia\.de\/Alan_Turing/i)
   end
 
-  it "should display a link to create new authors" do
+  it 'should display a link to create new authors' do
     visit authors_path
 
     expect(page).to have_link('Add author')
   end
 
-  it "should display a link to show alan's details" do
+  it 'should display a link to show alan\'s details' do
     FactoryGirl.create :author
     visit authors_path
 
     expect(page).to have_link('Show')
   end
-
 end
