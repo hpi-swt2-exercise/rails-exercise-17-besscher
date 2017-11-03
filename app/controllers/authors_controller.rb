@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
   end
 
   def edit
-    @article = Author.find(params[:id])
+    @author = Author.find(params[:id])
   end
 
   def create
