@@ -38,6 +38,7 @@ describe 'Index author page', type: :feature do
     visit authors_path
 
     expect(page).to have_link('Destroy')
+    expect(Author.find_by_first_name('Alan')).not_to be_nil
     click_link('Destroy')
     expect(Author.find_by_first_name('Alan')).to be_nil
   end
