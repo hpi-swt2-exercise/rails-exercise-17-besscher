@@ -17,4 +17,11 @@ describe 'Index paper page', type: :feature do
 
     expect(page).to have_link('Add paper')
   end
+
+  it 'should display a link to show paper\'s details' do
+    FactoryGirl.create :paper
+    visit papers_path
+
+    expect(page).to have_link('Show')
+  end
 end
