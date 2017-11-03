@@ -7,6 +7,7 @@
     <th>Name</th>
     <th>Homepage</th>
     <th>Show</th>
+    <th>Edit</th>
   </tr>
 
   <% @authors.each do |author| %>
@@ -14,6 +15,8 @@
         <td><%= author.name %></td>
         <td><%= author.homepage %></td>
         <td><%= link_to 'Show', author %></td>
+        <td><%= #link_to 'Edit', edit_author_path(author)
+        %></td>
       </tr>
   <% end %>
 </table>
