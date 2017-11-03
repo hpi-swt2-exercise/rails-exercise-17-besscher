@@ -14,4 +14,10 @@ describe "Index author page", type: :feature do
     expect(page.text).to match(/http:\/\/wikipedia\.de\/Alan_Turing/i)
   end
 
+  it "should display a link to create new authors" do
+    visit authors_path
+
+    expect(page).to have_link('add author')
+  end
+
 end
