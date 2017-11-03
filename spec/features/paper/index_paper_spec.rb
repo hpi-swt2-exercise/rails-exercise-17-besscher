@@ -11,4 +11,10 @@ describe 'Index paper page', type: :feature do
 
     expect(page.text).to match(/COMPUTING MACHINERY AND INTELLIGENCE/i)
   end
+
+  it 'should display a link to create new papers' do
+    visit papers_path
+
+    expect(page).to have_link('Add paper')
+  end
 end
