@@ -9,6 +9,7 @@
     <th>Venue</th>
     <th>Year</th>
     <th>Show</th>
+    <th>Edit</th>
   </tr>
 
   <% @papers.each do |paper| %>
@@ -17,6 +18,7 @@
         <td><%= paper.venue %></td>
         <td><%= paper.year %></td>
         <td><%= link_to 'Show', paper %></td>
+        <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
       </tr>
   <% end %>
 </table>

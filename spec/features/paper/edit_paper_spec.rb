@@ -6,7 +6,7 @@ describe 'Edit paper page', type: :feature do
     visit edit_paper_path(@test_paper)
   end
   it 'should edit with no error' do
-    @test_paper = FactoryGirl.create :author
+    @test_paper = FactoryGirl.create :paper
     visit edit_paper_path(@test_paper)
 
     fill_in 'paper_year', with: 12_345
