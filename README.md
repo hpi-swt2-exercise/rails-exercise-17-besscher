@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/hpi-swt2-exercise/rails-exercise-17-besscher.svg?branch=master)](https://travis-ci.org/hpi-swt2-exercise/rails-exercise-17-besscher)
+
+
 # SWT2 2017/18 - Introductory Exercise
 
 We prepared an application skeleton for you that has a failing test case.
