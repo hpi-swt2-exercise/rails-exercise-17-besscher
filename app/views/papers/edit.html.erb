@@ -31,6 +31,17 @@
       <%= f.text_field :year %>
     </p>
 
+    <%= f.label 'Author 1', for: 'paper_author_id_1' %><br>
+    <%= f.collection_select(:author1, Author.all, :id, :name, prompt: true) %><br>
+    <%= f.label 'Author 2', for: 'paper_author_id_2' %><br>
+    <%= f.collection_select(:author2, Author.all, :id, :name, prompt: true) %><br>
+    <%= f.label 'Author 3', for: 'paper_author_id_3' %><br>
+    <%= f.collection_select(:author3, Author.all, :id, :name, prompt: true) %><br>
+    <%= f.label 'Author 4', for: 'paper_author_id_4' %><br>
+    <%= f.collection_select(:author4, Author.all, :id, :name, prompt: true) %><br>
+    <%= f.label 'Author 5', for: 'paper_author_id_5' %><br>
+    <%= f.collection_select(:author5, Author.all, :id, :name, prompt: true) %>
+
     <p>
       <%= f.submit %>
     </p>
