@@ -41,4 +41,16 @@ describe 'Index paper page', type: :feature do
     click_link('Destroy')
     expect(Paper.find_by_title('COMPUTING MACHINERY AND INTELLIGENCE')).to be_nil
   end
+
+  it 'should be able to filter papers by year' do
+    FactoryGirl.create :paper
+    paper2 = Paper.new(title: 'go to statement considered harmful',
+                       venue: 'communications of the acm',
+                       year: 1968)
+    paper2.save
+    visit (papers_path + '?year=1950')
+
+    expect(page.text).to match(/COMPUTING MACHINERY AND INTELLIGENCE/i)
+    expect(page.text).not_to match(/go to statement considered harmful/i)
+  end
 end
